@@ -1,3 +1,5 @@
+#! /bin/bash
+
 
 #! /bin/bash
 echo "Press (0) for computing in days press (1) for computing in hour "
@@ -9,6 +11,7 @@ read wd;
 payr=20;
 hrpd=8;
 
+wageaccday(){
 
 if [[ $c -eq 0 ]] && [[ $wd -le 20 ]]
 then
@@ -16,24 +19,18 @@ then
 
 	echo "Total wage on basis of working days " $wage;
 
-elif [[ $c -eq 1 ]] && [[ $whr -le 100 ]]
+fi
+}
+
+wageacchr(){
+if [[ $c -eq 1 ]] && [[ $whr -le 100 ]]
 	then
 	wage=$(($wrh*$payr))
-		
 	echo "Total wage on basis of working hours - "$wage;
- else
- 	break
 fi
+}
+wageaccday
+wageacchr
 
-
-
-
-
-
-
-
-
-
-
-
-
+echo "Daily wage for full day is - " $((8*20))
+echo "Daily wage for half day is - " $((4*20))
